@@ -1,0 +1,396 @@
+{
+  "node": "CompilationUnit",
+  "package": {
+    "node": "PackageDeclaration",
+    "javadoc": null,
+    "annotations": [],
+    "name": {
+      "node": "QualifiedName",
+      "qualifier": {
+        "node": "QualifiedName",
+        "qualifier": {
+          "node": "QualifiedName",
+          "qualifier": {
+            "node": "QualifiedName",
+            "qualifier": {
+              "node": "QualifiedName",
+              "qualifier": {
+                "node": "QualifiedName",
+                "qualifier": {
+                  "node": "QualifiedName",
+                  "qualifier": {
+                    "node": "SimpleName",
+                    "identifier": "com"
+                  },
+                  "name": {
+                    "node": "SimpleName",
+                    "identifier": "tmax"
+                  }
+                },
+                "name": {
+                  "node": "SimpleName",
+                  "identifier": "superframe"
+                }
+              },
+              "name": {
+                "node": "SimpleName",
+                "identifier": "studio"
+              }
+            },
+            "name": {
+              "node": "SimpleName",
+              "identifier": "master"
+            }
+          },
+          "name": {
+            "node": "SimpleName",
+            "identifier": "domain"
+          }
+        },
+        "name": {
+          "node": "SimpleName",
+          "identifier": "auth"
+        }
+      },
+      "name": {
+        "node": "SimpleName",
+        "identifier": "controller"
+      }
+    }
+  },
+  "imports": [],
+  "types": [
+    {
+      "node": "TypeDeclaration",
+      "javadoc": null,
+      "modifiers": [
+        {
+          "node": "MarkerAnnotation",
+          "typeName": {
+            "node": "SimpleName",
+            "identifier": "RestController"
+          }
+        },
+        {
+          "node": "MarkerAnnotation",
+          "typeName": {
+            "node": "SimpleName",
+            "identifier": "RequiredArgsConstructor"
+          }
+        },
+        {
+          "node": "Modifier",
+          "keyword": "public"
+        }
+      ],
+      "interface": false,
+      "name": {
+        "node": "SimpleName",
+        "identifier": "AuthController"
+      },
+      "typeParameters": [],
+      "superclassType": null,
+      "superInterfaceTypes": [],
+      "bodyDeclarations": [
+        {
+          "node": "FieldDeclaration",
+          "javadoc": null,
+          "modifiers": [
+            {
+              "node": "Modifier",
+              "keyword": "private"
+            },
+            {
+              "node": "Modifier",
+              "keyword": "final"
+            }
+          ],
+          "type": {
+            "node": "SimpleType",
+            "name": {
+              "node": "SimpleName",
+              "identifier": "AuthService"
+            }
+          },
+          "fragments": [
+            {
+              "node": "VariableDeclarationFragment",
+              "name": {
+                "node": "SimpleName",
+                "identifier": "authService"
+              },
+              "extraDimensions": 0,
+              "initializer": null
+            }
+          ]
+        },
+        {
+          "node": "MethodDeclaration",
+          "javadoc": null,
+          "modifiers": [
+            {
+              "node": "SingleMemberAnnotation",
+              "typeName": {
+                "node": "SimpleName",
+                "identifier": "PostMapping"
+              },
+              "value": {
+                "node": "StringLiteral",
+                "escapedValue": "\"/auth/sign-up\""
+              }
+            },
+            {
+              "node": "Modifier",
+              "keyword": "public"
+            }
+          ],
+          "constructor": false,
+          "typeParameters": [],
+          "returnType2": {
+            "node": "SimpleType",
+            "name": {
+              "node": "SimpleName",
+              "identifier": "String"
+            }
+          },
+          "name": {
+            "node": "SimpleName",
+            "identifier": "signUp"
+          },
+          "parameters": [
+            {
+              "node": "SingleVariableDeclaration",
+              "modifiers": [
+                {
+                  "node": "MarkerAnnotation",
+                  "typeName": {
+                    "node": "SimpleName",
+                    "identifier": "RequestBody"
+                  }
+                },
+                {
+                  "node": "MarkerAnnotation",
+                  "typeName": {
+                    "node": "SimpleName",
+                    "identifier": "Valid"
+                  }
+                }
+              ],
+              "type": {
+                "node": "SimpleType",
+                "name": {
+                  "node": "QualifiedName",
+                  "qualifier": {
+                    "node": "SimpleName",
+                    "identifier": "AuthDto"
+                  },
+                  "name": {
+                    "node": "SimpleName",
+                    "identifier": "SignUp"
+                  }
+                }
+              },
+              "varargs": false,
+              "name": {
+                "node": "SimpleName",
+                "identifier": "signUp"
+              },
+              "extraDimensions": 0,
+              "initializer": null
+            },
+            {
+              "node": "SingleVariableDeclaration",
+              "modifiers": [],
+              "type": {
+                "node": "SimpleType",
+                "name": {
+                  "node": "SimpleName",
+                  "identifier": "HttpServletResponse"
+                }
+              },
+              "varargs": false,
+              "name": {
+                "node": "SimpleName",
+                "identifier": "response"
+              },
+              "extraDimensions": 0,
+              "initializer": null
+            }
+          ],
+          "extraDimensions": 0,
+          "thrownExceptions": [],
+          "body": {
+            "node": "Block",
+            "statements": [
+              {
+                "node": "VariableDeclarationStatement",
+                "modifiers": [],
+                "type": {
+                  "node": "SimpleType",
+                  "name": {
+                    "node": "QualifiedName",
+                    "qualifier": {
+                      "node": "SimpleName",
+                      "identifier": "AuthDto"
+                    },
+                    "name": {
+                      "node": "SimpleName",
+                      "identifier": "Token"
+                    }
+                  }
+                },
+                "fragments": [
+                  {
+                    "node": "VariableDeclarationFragment",
+                    "name": {
+                      "node": "SimpleName",
+                      "identifier": "token"
+                    },
+                    "extraDimensions": 0,
+                    "initializer": {
+                      "node": "MethodInvocation",
+                      "expression": {
+                        "node": "SimpleName",
+                        "identifier": "authService"
+                      },
+                      "typeArguments": [],
+                      "name": {
+                        "node": "SimpleName",
+                        "identifier": "signUp"
+                      },
+                      "arguments": [
+                        {
+                          "node": "SimpleName",
+                          "identifier": "signUp"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "node": "ReturnStatement",
+                "expression": {
+                  "node": "MethodInvocation",
+                  "expression": null,
+                  "typeArguments": [],
+                  "name": {
+                    "node": "SimpleName",
+                    "identifier": "setTokenResponse"
+                  },
+                  "arguments": [
+                    {
+                      "node": "SimpleName",
+                      "identifier": "response"
+                    },
+                    {
+                      "node": "SimpleName",
+                      "identifier": "token"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": "MethodDeclaration",
+          "javadoc": null,
+          "modifiers": [
+            {
+              "node": "SingleMemberAnnotation",
+              "typeName": {
+                "node": "SimpleName",
+                "identifier": "GetMapping"
+              },
+              "value": {
+                "node": "StringLiteral",
+                "escapedValue": "\"/auth/duplication\""
+              }
+            },
+            {
+              "node": "Modifier",
+              "keyword": "public"
+            }
+          ],
+          "constructor": false,
+          "typeParameters": [],
+          "returnType2": {
+            "node": "SimpleType",
+            "name": {
+              "node": "SimpleName",
+              "identifier": "Boolean"
+            }
+          },
+          "name": {
+            "node": "SimpleName",
+            "identifier": "duplicationCheck"
+          },
+          "parameters": [
+            {
+              "node": "SingleVariableDeclaration",
+              "modifiers": [
+                {
+                  "node": "MarkerAnnotation",
+                  "typeName": {
+                    "node": "SimpleName",
+                    "identifier": "ModelAttribute"
+                  }
+                },
+                {
+                  "node": "MarkerAnnotation",
+                  "typeName": {
+                    "node": "SimpleName",
+                    "identifier": "Valid"
+                  }
+                }
+              ],
+              "type": {
+                "node": "SimpleType",
+                "name": {
+                  "node": "SimpleName",
+                  "identifier": "AuthDuplicationCheckModel"
+                }
+              },
+              "varargs": false,
+              "name": {
+                "node": "SimpleName",
+                "identifier": "duplicationCheckModel"
+              },
+              "extraDimensions": 0,
+              "initializer": null
+            }
+          ],
+          "extraDimensions": 0,
+          "thrownExceptions": [],
+          "body": {
+            "node": "Block",
+            "statements": [
+              {
+                "node": "ReturnStatement",
+                "expression": {
+                  "node": "MethodInvocation",
+                  "expression": {
+                    "node": "SimpleName",
+                    "identifier": "authService"
+                  },
+                  "typeArguments": [],
+                  "name": {
+                    "node": "SimpleName",
+                    "identifier": "duplicationCheck"
+                  },
+                  "arguments": [
+                    {
+                      "node": "SimpleName",
+                      "identifier": "duplicationCheckModel"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
